@@ -27,7 +27,7 @@
             android:padding="10dp"
             android:gravity="center"
             android:text="Have you donated today?"
-            android:backgroundTint="@color/primary_dark"
+            android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/signin_btn"
             android:textColor="@android:color/white"
             android:layout_gravity="center_horizontal"
@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
-                    android:backgroundTint="@color/primary_dark"
+                    android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/signin_btn"
                     android:textColor="@android:color/white"
                     android:text="Total Donated:"
@@ -92,9 +92,10 @@
                 <TextView
                     android:id="@+id/settotalDonate"
                     android:gravity="center"
-                    android:backgroundTint="@color/primary_dark"
+                    android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/circle"
                     android:text="1 times"
+                    android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
@@ -109,7 +110,7 @@
                 <TextView
                     android:layout_marginBottom="5dp"
                     android:gravity="center"
-                    android:backgroundTint="@color/primary_dark"
+                    android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/signin_btn"
                     android:textColor="@android:color/white"
                     android:text="Last donated:"
@@ -118,9 +119,10 @@
                 <TextView
                     android:id="@+id/setLastDonate"
                     android:gravity="center"
-                    android:backgroundTint="@color/primary_dark"
+                    android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/circle"
                     android:text="12/12/2018"
+                    android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>

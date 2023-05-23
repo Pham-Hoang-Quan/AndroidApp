@@ -30,7 +30,7 @@
                     android:id="@+id/targetBG"
                     android:textSize="16sp"
                     android:text="AB+"
-                    android:textColor="#F8F8F8"
+                    android:textColor="#d50000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView

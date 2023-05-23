@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/primary"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -13,10 +13,11 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:background="@drawable/boarder"
-            android:backgroundTint="@color/primary_dark"
+            android:backgroundTint="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Why Should You Donate Blood?"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:paddingTop="8dp" />
         <TextView
@@ -34,11 +35,12 @@
         <TextView
             android:gravity="center"
             android:layout_gravity="center"
-            android:backgroundTint="@color/primary_dark"
+            android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/boarder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/eligibility_"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:paddingTop="8dp" />
 

@@ -99,7 +99,8 @@
             android:gravity="center"
             android:id="@+id/postbtn"
             android:text="@string/Post"
-            android:backgroundTint="@color/primary_dark"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/signin_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

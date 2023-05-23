@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "788780128661",
+    "firebase_url": "https://hienmau-8fa7c-default-rtdb.firebaseio.com/",
+    "project_id": "hienmau-8fa7c",
+    "storage_bucket": "hienmau-8fa7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788780128661:android:4bcceda2aeef1629c6be9c",
+        "android_client_info": {
+          "package_name": "com.android.iunoob.bloodbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788780128661-ecflodfbacljikveer97e7jblta5qlvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIBG2GL4lVT3rVWM-rhstF7B3O0yLyZ7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788780128661-ecflodfbacljikveer97e7jblta5qlvc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

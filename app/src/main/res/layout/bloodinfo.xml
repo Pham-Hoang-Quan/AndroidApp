@@ -10,16 +10,16 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/boarder"
             android:backgroundTint="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Why Should You Donate Blood?"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:text="Tại sao bạn nên hiến máu?"
             android:textColor="@color/white"
-            android:textSize="20dp"
-            android:paddingTop="8dp" />
+            android:textSize="20dp" />
         <TextView
             android:gravity="start"
             android:layout_gravity="center"

@@ -10,7 +10,7 @@
     <string name="prompt_email">Email</string>
     <string name="register">Tạo tài khoản</string>
     <string name="forgotpass">Quên mật khẩu?</string>
-    <string name="prompt_password">Mật khẩ</string>
+    <string name="prompt_password">Mật khẩu</string>
     <string name="prompt_confirm_password">Xác nhận mật khẩu</string>
     <string name="action_sign_in_short">Đăng nhập</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -28,7 +28,7 @@
     <string name="devinfo">Về chúng tôi</string>
     <string name="bloodinfo">Thông tin Blood</string>
     <string name="BloodGroup">Nhóm máu</string>
-    <string name="Division">Khu vuẹc</string>
+    <string name="Division">Khu vực</string>
     <string name="Post">Đăng</string>
 
 
@@ -60,17 +60,16 @@
         <item>O-</item>
     </array>
 
-    <string name="eligibility_">Eligibility Requirements</string>
-    <string name="female_">If you are female, you must:\n Be healthy and feeling well\nBe at least 17 years old in most states\nBe at least 5 ft 5 inch\nWeigh at least 150 lbs.</string>
-    <string name="male_">If you are male, you must:\nBe healthy and feeling well\nBe at least 17 years old in most states\nBe at least 5 ft 1 inch \nWeigh at least 130 lbs.\n</string>
-    <string name="info_">Giving blood saves lives. The blood you give is a lifeline in an emergency and for people who need long-term treatments. Many people would not be alive today if donors had not generously given their blood. \n\nWhy we need you to give blood?\n\n We need over 6000 blood donations every day to treat patients in need for people to give blood.\n\nEach year we need approximately 200000 new donors, as some donors can no longer give blood.Most people between ages of 17-65 are able to give blood. Around half our current donors are over 45.That is why we need more young people to start giving blood.</string>
-    <string name="aboutus">This is a demo projects on blood donation and collecting. Our Team Members are: \n
-                1. Mobarak Hosen Shakil\n
-                2. Shamim Hossain \n
-                3. Mehedi Hasan \n
-                4. Akib Hosen Khan \n
-                5. MMR Raju \n
-                6. Abdur Rahman\n
+    <string name="eligibility_">Yêu cầu đủ điều kiện</string>
+    <string name="female_">Nếu bạn là nữ, bạn nên:\n Khỏe mạnh và cảm thấy tốt\n Ít nhất 17 tuổi \n Chiều cao tối thiểu là 1m50\n Cân nặng tối thiểu 45kg.</string>
+    <string name="male_">Nếu bạn là nam, bạn nên:\n Khỏe mạnh và cảm thấy tốt\n Ít nhất 17 tuổi\n Chiều cao tối thiểu là 1m60 \n Cân nặng tối thiểu 50kg.\n</string>
+    <string name="info_">Giọt máu cho đi, cuộc đời ở lại. Máu bạn hiến chính là cứu cánh trong trường hợp khẩn cấp và cho những người cần điều trị lâu dài. Nhiều người sẽ không còn sống đến ngày hôm nay nếu những người hiến tặng không hào phóng hiến máu của họ. \n\nTại sao chúng tôi cần bạn hiến máu?\n\n Chúng tôi cần hơn 6000 đơn vị máu mỗi ngày để điều trị cho những bệnh nhân cần người hiến máu.\n\nMỗi năm chúng tôi cần khoảng 200.000 người hiến máu mới, vì một số người hiến máu không thể cho máu được nữa. Hầu hết những người trong độ tuổi từ 17-65 đều có thể hiến máu. Khoảng một nửa số người hiến máu hiện tại của chúng tôi đã trên 45 tuổi. Đó là lý do tại sao chúng tôi cần nhiều người trẻ tuổi hơn để bắt đầu hiến máu.</string>
+    <string name="aboutus">Đây là một dự án demo về hiến máu và thu thập. Thành viên nhóm gồm: \n
+                1. Phạm Hoàng Quân\n
+                2. Vương Khánh Như \n
+                3. Nguyễn Thị Hồng Linh \n
+                4. Trương Phan Ngọc Trúc \n
+                5. Phan Nguyễn Gia Ngân
     </string>
 
 

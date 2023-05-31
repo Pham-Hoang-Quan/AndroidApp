@@ -12,7 +12,7 @@
         android:gravity="center"
         android:id="@+id/ShowInof"
         android:visibility="gone"
-        android:text="You are not a donor. Be a donor first to achieve!"
+        android:text="Bạn chưa có thành tựu!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

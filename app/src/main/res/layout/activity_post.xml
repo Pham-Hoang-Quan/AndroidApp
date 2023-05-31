@@ -43,13 +43,15 @@
             <TextView
                 android:padding="5dp"
                 android:text="Vị trí:"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <EditText
                 android:id="@+id/getLocation"
                 android:padding="5dp"
                 android:inputType="text"
-                android:hint="Nhập vị trí của bạn"
+
+                android:hint="Nhập vị trí khu vực"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

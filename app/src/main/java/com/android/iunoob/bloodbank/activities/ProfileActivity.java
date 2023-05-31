@@ -62,7 +62,7 @@ public class ProfileActivity extends AppCompatActivity {
         fullName = findViewById(R.id.input_fullName);
         gender = findViewById(R.id.gender);
         address = findViewById(R.id.inputAddress);
-//        division = findViewById(R.id.inputDivision);
+        division = findViewById(R.id.inputDivision);
         bloodgroup = findViewById(R.id.inputBloodGroup);
         contact = findViewById(R.id.inputMobile);
         isDonor = findViewById(R.id.checkbox);

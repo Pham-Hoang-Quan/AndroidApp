@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        Toast.makeText(getApplicationContext(), "Please fill all the field.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Vui lòng điền hết tất cả các trường.", Toast.LENGTH_LONG).show();
                     }
 
                 } catch (Exception e)

@@ -67,11 +67,11 @@ public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.
             postHolder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
         DonorData donorData = postLists.get(i);
-        postHolder.Name.setText("Name: "+donorData.getName());
+        postHolder.Name.setText("Tên: "+donorData.getName());
         postHolder.contact.setText(donorData.getContact());
-        postHolder.Address.setText("Address: "+donorData.getAddress());
-        postHolder.totaldonate.setText("Total Donation: "+donorData.getTotalDonate()+" times");
-        postHolder.posted.setText("Last Donation: "+donorData.getLastDonate());
+        postHolder.Address.setText("Địa hỉ: "+donorData.getAddress());
+        postHolder.totaldonate.setText("Tổng lần hiến máu: "+donorData.getTotalDonate()+" lần");
+        postHolder.posted.setText("Lần hiến cuối cùng: "+donorData.getLastDonate());
 
 
     }

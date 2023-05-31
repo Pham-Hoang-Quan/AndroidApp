@@ -1,52 +1,106 @@
 <resources>
     <string name="app_name">Blood Point</string>
-    <string name="title_activity_login">Sign in</string>
-    <string name="home">Home</string>
-    <string name="profile">Profile</string>
-    <string name="achiev">Achievements</string>
+    <string name="title_activity_login">Đăng ký</string>
+    <string name="home">Trang chủ</string>
+    <string name="profile">Cá nhân</string>
+    <string name="achiev">Thành tựu</string>
 
     <!-- Strings related to login -->
-    <string name="signup">Register</string>
+    <string name="signup">Đăng ký</string>
     <string name="prompt_email">Email</string>
-    <string name="register">Create an account</string>
-    <string name="forgotpass">Forgot password?</string>
-    <string name="prompt_password">Password</string>
-    <string name="prompt_confirm_password">Confirm password</string>
-    <string name="action_sign_in_short">Sign in</string>
+    <string name="register">Tạo tài khoản</string>
+    <string name="forgotpass">Quên mật khẩu?</string>
+    <string name="prompt_password">Mật khẩu</string>
+    <string name="prompt_confirm_password">Xác nhận mật khẩu</string>
+    <string name="action_sign_in_short">Đăng nhập</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="reset">Reset</string>
-    <string name="displayName">Full Name</string>
-    <string name="mobile">Mobile No</string>
-    <string name="userAddress">Address</string>
-    <string name="nearH">Find nearest Hospitals</string>
-    <string name="fndBlood">Find Blood Donor</string>
-    <string name="lgout">Log out</string>
-    <string name="devinfo">About us</string>
-    <string name="bloodinfo">Blood Info</string>
-    <string name="BloodGroup">Blood Group</string>
-    <string name="Division">Choose Division</string>
-    <string name="Post">Post</string>
+    <string name="displayName">Họ và tên</string>
+    <string name="mobile">Số điện thoại</string>
+    <string name="userAddress">Địa chỉ</string>
+    <string name="nearH">Bệnh viện gần nhất</string>
+    <string name="fndBlood">Tìm người hiến máu</string>
+    <string name="lgout">Đăng xuất</string>
+    <string name="devinfo">Về chúng tôi</string>
+    <string name="bloodinfo">Thông tin máu</string>
+    <string name="BloodGroup">Nhóm máu</string>
+    <string name="Division">Chọn khu vực</string>
+    <string name="Post">Đăng</string>
 
 
     <string-array name="division_list">
-        <item>Dhaka</item>
-        <item>Rajshahi</item>
-        <item>Barisal</item>
-        <item>Khulna</item>
-        <item>Sylhet</item>
-        <item>Rangpur</item>
-        <item>Chittagong</item>
-        <item>Mymensingh</item>
-
+        <item>Hà Nội</item>
+        <item>Hồ Chí Minh</item>
+        <item>Hải Phòng</item>
+        <item>Đà Nẵng</item>
+        <item>Cần Thơ</item>
+        <item>An Giang</item>
+        <item>Bà Rịa-Vũng Tàu</item>
+        <item>Bạc Liêu</item>
+        <item>Bắc Kạn</item>
+        <item>Bắc Giang</item>
+        <item>Bắc Ninh</item>
+        <item>Bến Tre</item>
+        <item>Bình Dương</item>
+        <item>Bình Định</item>
+        <item>Bình Phước</item>
+        <item>Bình Thuận</item>
+        <item>Cà Mau</item>
+        <item>Cao Bằng</item>
+        <item>Đắk Lắk</item>
+        <item>Đắk Nông</item>
+        <item>Điện Biên</item>
+        <item>Đồng Nai</item>
+        <item>Đồng Tháp</item>
+        <item>Gia Lai</item>
+        <item>Hà Giang</item>
+        <item>Hà Nam</item>
+        <item>Hà Tĩnh</item>
+        <item>Hải Dương</item>
+        <item>Hậu Giang</item>
+        <item>Hòa Bình</item>
+        <item>Hưng Yên</item>
+        <item>Khánh Hòa</item>
+        <item>Kiên Giang</item>
+        <item>Kon Tum</item>
+        <item>Lai Châu</item>
+        <item>Lâm Đồng</item>
+        <item>Lạng Sơn</item>
+        <item>Lào Cai</item>
+        <item>Long An</item>
+        <item>Nam Định</item>
+        <item>Nghệ An</item>
+        <item>Ninh Bình</item>
+        <item>Ninh Thuận</item>
+        <item>Phú Thọ</item>
+        <item>Phú Yên</item>
+        <item>Quảng Bình</item>
+        <item>Quảng Nam</item>
+        <item>Quảng Ngãi</item>
+        <item>Quảng Ninh</item>
+        <item>Quảng Trị</item>
+        <item>Sóc Trăng</item>
+        <item>Sơn La</item>
+        <item>Tây Ninh</item>
+        <item>Thái Bình</item>
+        <item>Thái Nguyên</item>
+        <item>Thanh Hóa</item>
+        <item>Thừa Thiên-Huế</item>
+        <item>Tiền Giang</item>
+        <item>Trà Vinh</item>
+        <item>Tuyên Quang</item>
+        <item>Vĩnh Long</item>
+        <item>Vĩnh Phúc</item>
+        <item>Yên Bái</item>
     </string-array>
 
     <array name="gender">
-        <item>Male</item>
-        <item>Female</item>
+        <item>Nam</item>
+        <item>Nữ</item>
     </array>
 
     <array name="Blood_Group">

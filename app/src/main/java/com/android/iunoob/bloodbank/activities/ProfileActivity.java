@@ -62,7 +62,7 @@ public class ProfileActivity extends AppCompatActivity {
         fullName = findViewById(R.id.input_fullName);
         gender = findViewById(R.id.gender);
         address = findViewById(R.id.inputAddress);
-        division = findViewById(R.id.inputDivision);
+//        division = findViewById(R.id.inputDivision);
         bloodgroup = findViewById(R.id.inputBloodGroup);
         contact = findViewById(R.id.inputMobile);
         isDonor = findViewById(R.id.checkbox);
@@ -75,10 +75,10 @@ public class ProfileActivity extends AppCompatActivity {
             inputemail.setVisibility(View.GONE);
             inputpassword.setVisibility(View.GONE);
             retypePassword.setVisibility(View.GONE);
-            btnSignup.setText("Update Profile");
+            btnSignup.setText("Cập nhật thông tin");
             pd.dismiss();
            /// getActionBar().setTitle("Profile");
-            getSupportActionBar().setTitle("Profile");
+            getSupportActionBar().setTitle("Thông tin");
             findViewById(R.id.image_logo).setVisibility(View.GONE);
             isUpdate = true;
 
@@ -110,11 +110,11 @@ public class ProfileActivity extends AppCompatActivity {
                                 if(dataSnapshot.exists())
                                 {
                                     isDonor.setChecked(true);
-                                    isDonor.setText("Unmark this to leave from donors");
+                                    isDonor.setText("Bỏ đánh dấu này để rời khỏi danh sách người hiến máu");
                                 }
                                 else
                                 {
-                                    Toast.makeText(ProfileActivity.this, "Your are not a donor! Be a donor and save life by donating blood.",
+                                    Toast.makeText(ProfileActivity.this, "Bạn không phải là người hiến máu! Hãy trở thành người hiến máu và cứu mạng người bằng cách hiến máu.",
                                             Toast.LENGTH_LONG).show();
                                 }
                                 pd.dismiss();
@@ -160,7 +160,7 @@ public class ProfileActivity extends AppCompatActivity {
                         ShowError("Name");
                         fullName.requestFocusFromTouch();
                     } else if (Contact.length() < 11) {
-                        ShowError("Contact Number");
+                        ShowError("Contatc Number");
                         contact.requestFocusFromTouch();
                     } else if (Address.length() <= 2) {
                         ShowError("Address");
@@ -174,7 +174,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 ShowError("Password");
                                 inputpassword.requestFocusFromTouch();
                             } else if (password.compareTo(ConfirmPassword) != 0) {
-                                Toast.makeText(ProfileActivity.this, "Password did not match!", Toast.LENGTH_LONG)
+                                Toast.makeText(ProfileActivity.this, "Mật khẩu không trùng khớp", Toast.LENGTH_LONG)
                                         .show();
                                 retypePassword.requestFocusFromTouch();
                             } else {
@@ -185,7 +185,7 @@ public class ProfileActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<AuthResult> task) {
 
                                                 if (!task.isSuccessful()) {
-                                                    Toast.makeText(ProfileActivity.this, "Registration failed! try agian.", Toast.LENGTH_LONG)
+                                                    Toast.makeText(ProfileActivity.this, "Đăng ký thấy bại, vui lòng thử lại.", Toast.LENGTH_LONG)
                                                             .show();
                                                     Log.v("error", task.getException().getMessage());
                                                 } else {
@@ -208,7 +208,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                                                     }
 
-                                                    Toast.makeText(getApplicationContext(), "Welcome, your account has been created!", Toast.LENGTH_LONG)
+                                                    Toast.makeText(getApplicationContext(), "Tài khoản của bạn đã được tạo!", Toast.LENGTH_LONG)
                                                             .show();
                                                     Intent intent = new Intent(ProfileActivity.this, Dashboard.class);
                                                     startActivity(intent);

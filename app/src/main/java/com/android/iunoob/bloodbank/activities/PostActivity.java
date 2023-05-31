@@ -144,7 +144,7 @@ public class PostActivity extends AppCompatActivity {
                                     startActivity(new Intent(PostActivity.this, Dashboard.class));
 
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Database error occured.",
+                                    Toast.makeText(getApplicationContext(), "Đã xảy ra lỗi!!!",
                                             Toast.LENGTH_LONG).show();
                                 }
 

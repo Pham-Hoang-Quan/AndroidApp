@@ -123,7 +123,6 @@
             android:inputType="text"
             android:textColor="@android:color/black" />
     </LinearLayout>
-
         <LinearLayout
             android:padding="3dp"
             android:layout_width="match_parent"
@@ -131,6 +130,26 @@
             android:orientation="horizontal">
         </LinearLayout>
 
+        <LinearLayout
+            android:padding="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Khu vực:" />
+
+            <Spinner
+                android:layout_marginLeft="42dp"
+                android:id="@+id/inputDivision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/division_list">
+            </Spinner>
+        </LinearLayout>
         <EditText
             android:id="@+id/input_userEmail"
             android:layout_width="match_parent"

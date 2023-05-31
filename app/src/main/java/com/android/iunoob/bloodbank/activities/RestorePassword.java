@@ -48,7 +48,7 @@ public class RestorePassword extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(email))
                 {
-                    useremail.setError("Email required!");
+                    useremail.setError("Nhập email của bạn!");
                 }
                 else
                 {
@@ -59,14 +59,14 @@ public class RestorePassword extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful())
                                     {
-                                        Toast.makeText(getApplicationContext(), "We have sent an email to "+" '"+ email +"'. Please check your email.", Toast.LENGTH_LONG)
+                                        Toast.makeText(getApplicationContext(), "Chúng tôi dã gửi email tới "+" '"+ email +"'. Vui phòng kiểm tra email của bạn.", Toast.LENGTH_LONG)
                                                 .show();
                                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                         //useremail.setText(null);
                                     }
                                     else
                                     {
-                                        Toast.makeText(getApplicationContext(), "Sorry, There is something went wrong. please try again some time later.", Toast.LENGTH_LONG)
+                                        Toast.makeText(getApplicationContext(), "Xin lỗi, có một lỗi đã xảy ra. Vui lòng thử lại sau một thời gian.", Toast.LENGTH_LONG)
                                                 .show();
                                         useremail.setText(null);
                                     }

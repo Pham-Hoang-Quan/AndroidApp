@@ -26,7 +26,7 @@
             android:id="@+id/donateInfo"
             android:padding="10dp"
             android:gravity="center"
-            android:text="Have you donated today?"
+            android:text="Hôm nay bạn đã quyên góp chưa?"
             android:backgroundTint="@color/colorPrimary"
             android:background="@drawable/signin_btn"
             android:textColor="@android:color/white"
@@ -44,11 +44,11 @@
 
             <Button
                 android:id="@+id/btnYes"
-                android:text="Yes"
+                android:text="Có"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <Button
-                android:text="No"
+                android:text="Không"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -86,7 +86,7 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/signin_btn"
                     android:textColor="@android:color/white"
-                    android:text="Total Donated:"
+                    android:text="Tổng :"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
@@ -94,7 +94,7 @@
                     android:gravity="center"
                     android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/circle"
-                    android:text="1 times"
+                    android:text="1 lần"
                     android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -113,7 +113,7 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/signin_btn"
                     android:textColor="@android:color/white"
-                    android:text="Last donated:"
+                    android:text="Lần cuối:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView

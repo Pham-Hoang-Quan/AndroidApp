@@ -83,7 +83,7 @@ public class SearchDonorFragment extends Fragment {
         division = view.findViewById(R.id.btngetDivison);
         btnsearch = view.findViewById(R.id.btnSearch);
 
-        getActivity().setTitle("Find Blood Donor");
+        getActivity().setTitle("Tìm người hiến máu");
 
         btnsearch.setOnClickListener(new View.OnClickListener() {
             @Override

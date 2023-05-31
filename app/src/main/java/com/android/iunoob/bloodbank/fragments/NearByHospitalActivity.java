@@ -202,7 +202,7 @@ public class NearByHospitalActivity extends Fragment implements
         LatLng latLng = new LatLng(location.getLatitude() , location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("Current Location");
+        markerOptions.title("Vị trí hiện tại");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         currentLocationmMarker = mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
@@ -230,6 +230,6 @@ public class NearByHospitalActivity extends Fragment implements
        dataTransfer[1] = url;
 
        getNearbyPlacesData.execute(dataTransfer);
-       Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+       Toast.makeText(getContext(), "Bệnh viện gần đây", Toast.LENGTH_SHORT).show();
    }
 }

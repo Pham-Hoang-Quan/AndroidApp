@@ -72,7 +72,7 @@ public class AchievmentsView extends Fragment {
         totalDonate = view.findViewById(R.id.settotalDonate);
         donateInfo = view.findViewById(R.id.donateInfo);
 
-        getActivity().setTitle("Achievements");
+        getActivity().setTitle("Thành tựu");
         mAuth  = FirebaseAuth.getInstance();
         lastDate = "";
 
@@ -104,10 +104,10 @@ public class AchievmentsView extends Fragment {
                                 if(dataSnapshot.exists())
                                 {
                                     final DonorData donorData = dataSnapshot.getValue(DonorData.class);
-                                    totalDonate.setText(donorData.getTotalDonate()+" times");
+                                    totalDonate.setText(donorData.getTotalDonate()+" lần");
                                     if(donorData.getTotalDonate() == 0) {
                                         lastDate = "01/01/2001";
-                                        lastDonate.setText("Do not donate yet!");
+                                        lastDonate.setText("Không thành công");
                                     }
                                     else {
                                         lastDate = donorData.getLastDonate();

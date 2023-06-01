@@ -13,14 +13,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-
+//su dung de chay cac tac vu nen trong android
 public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
     String googlePlacesData;
     GoogleMap mMap;
     String url;
 
-
+//tai xuong du lieu tu google android api
     @Override
     protected String doInBackground(Object... objects) {
         mMap = (GoogleMap) objects[0];
@@ -36,7 +36,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
         return googlePlacesData;
     }
-
+//hien thi cac danh sach dia diem gan do
     @Override
     protected void onPostExecute(String s) {
 
@@ -46,7 +46,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
         showNearbyPlaces(nearbyPlaceList);
     }
-
+//hien thi cac danh sach dia diem gan do
     private void showNearbyPlaces(List<HashMap<String, String>> nearbyplaces)
     {
         for(int i=0; i<nearbyplaces.size(); i++)

@@ -26,7 +26,12 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //được gọi khi hoạt động Login được tạo, thiết lập sự kiện lấy
+        //thông tin người dùng hiện tại
         super.onCreate(savedInstanceState);
+
+        //thiết lập layout cho Login
         setContentView(R.layout.activity_login);
 
         pd = new ProgressDialog(this);
@@ -36,14 +41,21 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        //kiểm tra xem người dùng đã đăng nhập hay chưa
         if(mAuth.getCurrentUser() != null)
         {
+            //getCurrentUser() của đối tượng FirebaseAuth
+            //nếu người dùng đã đăng nhập thì tạo một đối tượng Intent
+            //chuyển hướng đến Activity DashBoard
             Intent intent = new Intent(getApplicationContext(), Dashboard.class);
             startActivity(intent);
+
+            //kết thúc activity hiện tại, để ngăn người dùng quay lại màn hình
+            //đăng nhập sau khi đã đăng nhập thành công
             finish();
         }
 
-
+        //khởi tạo các biến và liên kết thành phần giao diện
         inputemail = findViewById(R.id.input_username);
         inputpassword = findViewById(R.id.input_password);
 
@@ -51,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
         signup = findViewById(R.id.button_register);
         resetpass = findViewById(R.id.button_forgot_password);
 
+        //thiết lập sự kiện cho signin, signup, resetpass
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,15 +72,17 @@ public class LoginActivity extends AppCompatActivity {
                 final String password = inputpassword.getText().toString()+"";
 
                 try {
+                    //kiểm tra độ dài của email và mật khẩu sau đó thực hiện đăng nhập
                     if(password.length()>0 && email.length()>0) {
                         pd.show();
+                        //phương thức của FirebaseAuth
                         mAuth.signInWithEmailAndPassword(email, password)
                                 .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (!task.isSuccessful()) {
                                             Toast.makeText(getApplicationContext(),
-                                                    "Authentication Failed",
+                                                    "Quá trình xác thực thất bại",
                                                     Toast.LENGTH_LONG).show();
                                             Log.v("error", task.getException().getMessage());
                                         } else {
@@ -91,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //Khi ng dùng nhấn vào nút đăng ký Activity Profile sẽ hđ
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +115,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        //đặt lại mk
         resetpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

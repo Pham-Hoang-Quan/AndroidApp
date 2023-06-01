@@ -37,12 +37,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 
-/***
- Project Name: BloodBank
- Project Date: 10/22/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
 
 public class NearByHospitalActivity extends Fragment implements
         OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,

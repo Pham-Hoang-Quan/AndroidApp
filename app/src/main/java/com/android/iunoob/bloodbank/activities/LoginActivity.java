@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                                                     Toast.LENGTH_LONG).show();
                                             Log.v("error", task.getException().getMessage());
                                         } else {
+
                                             Intent intent = new Intent(getApplicationContext(), Dashboard.class);
                                             startActivity(intent);
                                             finish();

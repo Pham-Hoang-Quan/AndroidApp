@@ -52,10 +52,11 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         db_User = FirebaseDatabase.getInstance();
-        db_ref = db_User.getReference("users");
+        db_ref = db_User.getReference("users"); // tham chiếu tới node 'user' trên firebase
         donor_ref = db_User.getReference("donors");
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance(); // khởi tạo để xác thực người dùng
 
+        // ánh xạ lấy thông từ UI
         inputemail = findViewById(R.id.input_userEmail);
         inputpassword = findViewById(R.id.input_password);
         retypePassword = findViewById(R.id.input_password_confirm);
@@ -68,48 +69,56 @@ public class ProfileActivity extends AppCompatActivity {
         isDonor = findViewById(R.id.checkbox);
 
         btnSignup = findViewById(R.id.button_register);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // hiển thị back trên thanh action bar
 
         if (mAuth.getCurrentUser() != null) {
 
+            // kiểm tra xem đã đăng nhập hay chưa bằng FirebaseAuth
+            // Đặt tiêu đề của ActionBar thành "thông tin"
+
+            // ẩn các trường nhập inputemail, inputpassword, retypePassword
             inputemail.setVisibility(View.GONE);
             inputpassword.setVisibility(View.GONE);
             retypePassword.setVisibility(View.GONE);
+
+            // Đặt văn bản của nút btnSignup thành 'Cập nhật thông tin'
             btnSignup.setText("Cập nhật thông tin");
-            pd.dismiss();
-           /// getActionBar().setTitle("Profile");
-            getSupportActionBar().setTitle("Thông tin");
+            pd.dismiss(); // tắt ProgressDialog
+            getSupportActionBar().setTitle("Thông tin"); // set lại
             findViewById(R.id.image_logo).setVisibility(View.GONE);
             isUpdate = true;
 
+            // truy vấn dữ liệu từ firebase realtime database    
             Query Profile = db_ref.child(mAuth.getCurrentUser().getUid());
             Profile.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
+
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
                     UserData userData = dataSnapshot.getValue(UserData.class);
 
-                    if (userData != null) {
+                    if (userData != null) { // kiểm tra user có thông tin chưa
                         pd.show();
+                        // hiển thị thông tin users
                         fullName.setText(userData.getName());
                         gender.setSelection(userData.getGender());
                         address.setText(userData.getAddress());
                         contact.setText(userData.getContact());
                         bloodgroup.setSelection(userData.getBloodGroup());
                         division.setSelection(userData.getDivision());
+                        // Đây là một truy vấn trong cơ sở dữ liệu Firebase để kiểm tra xem người dùng hiện tại đã đăng ký làm người hiến máu hay chưa. Truy vấn này sử dụng các giá trị khu vực (division),
+                        // nhóm máu và ID người dùng hiện tại để tìm kiếm trong cơ sở dữ liệu "donors".
                         Query donor = donor_ref.child(division.getSelectedItem().toString())
                                 .child(bloodgroup.getSelectedItem().toString())
                                 .child(mAuth.getCurrentUser().getUid());
 
                         donor.addListenerForSingleValueEvent(new ValueEventListener() {
-
+                            // kiểm tra người dùng hiện tại
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                                 if(dataSnapshot.exists())
                                 {
-                                    isDonor.setChecked(true);
+                                    isDonor.setChecked(true); // là người hiến máu
                                     isDonor.setText("Bỏ đánh dấu này để rời khỏi danh sách người hiến máu");
                                 }
                                 else
@@ -142,6 +151,8 @@ public class ProfileActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // lấy giá trị từ giao diện
                 final String email = inputemail.getText().toString();
                 final String password = inputpassword.getText().toString();
                 final String ConfirmPassword = retypePassword.getText().toString();
@@ -166,20 +177,23 @@ public class ProfileActivity extends AppCompatActivity {
                         ShowError("Địa chỉ");
                         address.requestFocusFromTouch();
                     } else {
-                        if (!isUpdate) {
-                            if (email.length() == 0) {
+
+                        // phần đăng kí
+                        if (!isUpdate) { // kiểm tra đã đăng nhập chưa
+                            if (email.length() == 0) { // kiểm ra emall
                                 ShowError("Email ID");
                                 inputemail.requestFocusFromTouch();
-                            } else if (password.length() <= 5) {
+                            } else if (password.length() <= 5) { // kiểm tra password > 5
                                 ShowError("Mật khẩu");
                                 inputpassword.requestFocusFromTouch();
-                            } else if (password.compareTo(ConfirmPassword) != 0) {
+                            } else if (password.compareTo(ConfirmPassword) != 0) { // kiểm tra nhập lại mk
                                 Toast.makeText(ProfileActivity.this, "Mật khẩu không trùng khớp", Toast.LENGTH_LONG)
                                         .show();
                                 retypePassword.requestFocusFromTouch();
                             } else {
+
                                 pd.show();
-                                mAuth.createUserWithEmailAndPassword(email, password)
+                                mAuth.createUserWithEmailAndPassword(email, password) // phương thức để tạo tài khoản
                                         .addOnCompleteListener(ProfileActivity.this, new OnCompleteListener<AuthResult>() {
                                             @Override
                                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -189,6 +203,7 @@ public class ProfileActivity extends AppCompatActivity {
                                                             .show();
                                                     Log.v("error", task.getException().getMessage());
                                                 } else {
+                                                    // fill các trường bằng giá trị từ các thành phần giao diện
                                                     String id = mAuth.getCurrentUser().getUid();
                                                     db_ref.child(id).child("Name").setValue(Name);
                                                     db_ref.child(id).child("Gender").setValue(Gender);
@@ -223,7 +238,8 @@ public class ProfileActivity extends AppCompatActivity {
                             }
 
                         } else {
-
+                            // phần cập nhật tài khoản
+                            // fill các trường bằng giá của user hiện tại
                             String id = mAuth.getCurrentUser().getUid();
                             db_ref.child(id).child("Name").setValue(Name);
                             db_ref.child(id).child("Gender").setValue(Gender);
@@ -251,6 +267,7 @@ public class ProfileActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Cập nhật thành công", Toast.LENGTH_LONG)
                                     .show();
                             Intent intent = new Intent(ProfileActivity.this, Dashboard.class);
+                            // sau khi cập nhật thành công thì trả về trang admin
                             startActivity(intent);
                             finish();
                         }
@@ -272,13 +289,13 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     @Override
+    // kiểm tra người dùng item trong menu
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

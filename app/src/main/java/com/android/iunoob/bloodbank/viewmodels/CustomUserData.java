@@ -2,13 +2,6 @@ package com.android.iunoob.bloodbank.viewmodels;
 
 import java.io.Serializable;
 
-/***
- Project Name: BloodBank
- Project Date: 10/11/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
-
 public class CustomUserData implements Serializable {
    private String Address, Division, Contact;
    private String Name, BloodGroup;

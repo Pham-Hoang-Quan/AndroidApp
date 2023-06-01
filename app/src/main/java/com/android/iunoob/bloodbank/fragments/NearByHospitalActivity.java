@@ -37,6 +37,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 
+
 public class NearByHospitalActivity extends Fragment implements
         OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
@@ -234,16 +235,17 @@ public class NearByHospitalActivity extends Fragment implements
     }
 
 
-    public void ShowHospitals(double latitude, double longitude)
-    {
-        mMap.clear();
-        Object dataTransfer[] = new Object[2];
-        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();xx
-        String url = getUrl(latitude, longitude, "hospital");
-        dataTransfer[0] = mMap;
-        dataTransfer[1] = url;
+   public void ShowHospitals(double latitude, double longitude)
+   {
+       mMap.clear();
+       Object dataTransfer[] = new Object[2];
+       GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+       String url = getUrl(latitude, longitude, "hospital");
+       dataTransfer[0] = mMap;
+       dataTransfer[1] = url;
 
-        getNearbyPlacesData.execute(dataTransfer);
-        Toast.makeText(getContext(), "Danh sách các bệnh viện gần đây", Toast.LENGTH_SHORT).show();
-    }
+       getNearbyPlacesData.execute(dataTransfer);
+       Toast.makeText(getContext(), "Bệnh viện gần đây", Toast.LENGTH_SHORT).show();
+   }
+
 }

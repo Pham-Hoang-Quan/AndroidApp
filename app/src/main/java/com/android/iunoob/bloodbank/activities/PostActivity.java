@@ -52,7 +52,7 @@ public class PostActivity extends AppCompatActivity {
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
 
-        getSupportActionBar().setTitle("Post Blood Request");
+        getSupportActionBar().setTitle("Yêu cầu máu");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         text1 = findViewById(R.id.getMobile);
@@ -118,12 +118,12 @@ public class PostActivity extends AppCompatActivity {
 
                     if(text1.getText().length() == 0)
                     {
-                        Toast.makeText(getApplicationContext(), "Enter your contact number!",
+                        Toast.makeText(getApplicationContext(), "Nhập số điện thoại của bạn!",
                                 Toast.LENGTH_LONG).show();
                     }
                     else if(text2.getText().length() == 0)
                     {
-                        Toast.makeText(getApplicationContext(), "Enter your location!",
+                        Toast.makeText(getApplicationContext(), "Nhập vị trí của bạn!",
                                 Toast.LENGTH_LONG).show();
                     }
                     else {
@@ -139,12 +139,12 @@ public class PostActivity extends AppCompatActivity {
                                     db_ref.child(uid).child("BloodGroup").setValue(spinner1.getSelectedItem().toString());
                                     db_ref.child(uid).child("Time").setValue(Time);
                                     db_ref.child(uid).child("Date").setValue(Date);
-                                    Toast.makeText(PostActivity.this, "Your post has been created successfully",
+                                    Toast.makeText(PostActivity.this, "Yêu cầu hiến máu của bạn đã được đăng",
                                             Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(PostActivity.this, Dashboard.class));
 
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Database error occured.",
+                                    Toast.makeText(getApplicationContext(), "Đã xảy ra lỗi!!!",
                                             Toast.LENGTH_LONG).show();
                                 }
 

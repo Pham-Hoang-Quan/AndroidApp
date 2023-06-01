@@ -32,13 +32,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-/***
- Project Name: BloodBank
- Project Date: 10/14/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
-
 public class SearchDonorFragment extends Fragment {
 
     private View view;
@@ -83,7 +76,7 @@ public class SearchDonorFragment extends Fragment {
         division = view.findViewById(R.id.btngetDivison);
         btnsearch = view.findViewById(R.id.btnSearch);
 
-        getActivity().setTitle("Find Blood Donor");
+        getActivity().setTitle("Tìm người hiến máu");
 
         btnsearch.setOnClickListener(new View.OnClickListener() {
             @Override

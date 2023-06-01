@@ -13,13 +13,6 @@ import com.android.iunoob.bloodbank.viewmodels.CustomUserData;
 
 import java.util.List;
 
-/***
- Project Name: BloodBank
- Project Date: 10/11/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
-
 public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapter.PostHolder> {
 
 
@@ -68,10 +61,10 @@ public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapte
         }
 
         CustomUserData customUserData = postLists.get(i);
-        postHolder.Name.setText("Posted by: "+customUserData.getName());
-        postHolder.Address.setText("From: "+customUserData.getAddress()+", "+customUserData.getDivision());
-        postHolder.bloodgroup.setText("Needs "+customUserData.getBloodGroup());
-        postHolder.posted.setText("Posted on:"+customUserData.getTime()+", "+customUserData.getDate());
+        postHolder.Name.setText("Người đăng: "+customUserData.getName());
+        postHolder.Address.setText("Địa chỉ: "+customUserData.getAddress()+", "+customUserData.getDivision());
+        postHolder.bloodgroup.setText(""+customUserData.getBloodGroup());
+        postHolder.posted.setText("Ngày đăng:"+customUserData.getTime()+", "+customUserData.getDate());
         postHolder.contact.setText(customUserData.getContact());
 
     }

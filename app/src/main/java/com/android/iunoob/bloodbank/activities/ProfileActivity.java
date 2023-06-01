@@ -75,10 +75,10 @@ public class ProfileActivity extends AppCompatActivity {
             inputemail.setVisibility(View.GONE);
             inputpassword.setVisibility(View.GONE);
             retypePassword.setVisibility(View.GONE);
-            btnSignup.setText("Update Profile");
+            btnSignup.setText("Cập nhật thông tin");
             pd.dismiss();
            /// getActionBar().setTitle("Profile");
-            getSupportActionBar().setTitle("Profile");
+            getSupportActionBar().setTitle("Thông tin");
             findViewById(R.id.image_logo).setVisibility(View.GONE);
             isUpdate = true;
 
@@ -110,11 +110,11 @@ public class ProfileActivity extends AppCompatActivity {
                                 if(dataSnapshot.exists())
                                 {
                                     isDonor.setChecked(true);
-                                    isDonor.setText("Unmark this to leave from donors");
+                                    isDonor.setText("Bỏ đánh dấu này để rời khỏi danh sách người hiến máu");
                                 }
                                 else
                                 {
-                                    Toast.makeText(ProfileActivity.this, "Your are not a donor! Be a donor and save life by donating blood.",
+                                    Toast.makeText(ProfileActivity.this, "Bạn không phải là người hiến máu! Hãy trở thành người hiến máu và cứu mạng người bằng cách hiến máu.",
                                             Toast.LENGTH_LONG).show();
                                 }
                                 pd.dismiss();
@@ -157,13 +157,13 @@ public class ProfileActivity extends AppCompatActivity {
                 try {
 
                     if (Name.length() <= 2) {
-                        ShowError("Name");
+                        ShowError("Tên");
                         fullName.requestFocusFromTouch();
                     } else if (Contact.length() < 11) {
-                        ShowError("Contact Number");
+                        ShowError("Số điện thoại");
                         contact.requestFocusFromTouch();
                     } else if (Address.length() <= 2) {
-                        ShowError("Address");
+                        ShowError("Địa chỉ");
                         address.requestFocusFromTouch();
                     } else {
                         if (!isUpdate) {
@@ -171,10 +171,10 @@ public class ProfileActivity extends AppCompatActivity {
                                 ShowError("Email ID");
                                 inputemail.requestFocusFromTouch();
                             } else if (password.length() <= 5) {
-                                ShowError("Password");
+                                ShowError("Mật khẩu");
                                 inputpassword.requestFocusFromTouch();
                             } else if (password.compareTo(ConfirmPassword) != 0) {
-                                Toast.makeText(ProfileActivity.this, "Password did not match!", Toast.LENGTH_LONG)
+                                Toast.makeText(ProfileActivity.this, "Mật khẩu không trùng khớp", Toast.LENGTH_LONG)
                                         .show();
                                 retypePassword.requestFocusFromTouch();
                             } else {
@@ -185,7 +185,7 @@ public class ProfileActivity extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<AuthResult> task) {
 
                                                 if (!task.isSuccessful()) {
-                                                    Toast.makeText(ProfileActivity.this, "Registration failed! try agian.", Toast.LENGTH_LONG)
+                                                    Toast.makeText(ProfileActivity.this, "Đăng ký thất bại, vui lòng thử lại.", Toast.LENGTH_LONG)
                                                             .show();
                                                     Log.v("error", task.getException().getMessage());
                                                 } else {
@@ -208,7 +208,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                                                     }
 
-                                                    Toast.makeText(getApplicationContext(), "Welcome, your account has been created!", Toast.LENGTH_LONG)
+                                                    Toast.makeText(getApplicationContext(), "Tài khoản của bạn đã được tạo!", Toast.LENGTH_LONG)
                                                             .show();
                                                     Intent intent = new Intent(ProfileActivity.this, Dashboard.class);
                                                     startActivity(intent);
@@ -248,7 +248,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 donor_ref.child(div).child(blood).child(id).removeValue();
 
                             }
-                            Toast.makeText(getApplicationContext(), "Your account has been updated!", Toast.LENGTH_LONG)
+                            Toast.makeText(getApplicationContext(), "Cập nhật thành công", Toast.LENGTH_LONG)
                                     .show();
                             Intent intent = new Intent(ProfileActivity.this, Dashboard.class);
                             startActivity(intent);
@@ -267,7 +267,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void ShowError(String error) {
 
-        Toast.makeText(ProfileActivity.this, "Please, Enter a valid "+error,
+        Toast.makeText(ProfileActivity.this, "Vui lòng, nhập giá trị hợp lệ "+error,
                 Toast.LENGTH_LONG).show();
     }
 

@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:padding="5dp"
-                android:text="Choose Blood Group:"/>
+                android:text="Chọn nhóm máu:"/>
             <Spinner
                 android:id="@+id/btngetBloodGroup"
                 android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:padding="5dp"
-                android:text="Choose your Division:" />
+                android:text="Chọn khu vực:" />
 
             <Spinner
                 android:id="@+id/btngetDivison"

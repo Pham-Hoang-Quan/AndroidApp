@@ -13,13 +13,6 @@ import com.android.iunoob.bloodbank.viewmodels.CustomUserData;
 
 import java.util.List;
 
-/***
- Project Name: BloodBank
- Project Date: 10/11/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
-
 public class BloodRequestAdapter extends RecyclerView.Adapter<BloodRequestAdapter.PostHolder> {
 
 

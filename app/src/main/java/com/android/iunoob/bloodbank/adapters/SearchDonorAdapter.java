@@ -13,12 +13,6 @@ import com.android.iunoob.bloodbank.viewmodels.DonorData;
 
 import java.util.List;
 
-/***
- Project Name: BloodBank
- Project Date: 10/11/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
 
 public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.PostHolder> {
 

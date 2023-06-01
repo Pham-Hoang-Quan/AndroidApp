@@ -30,14 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/***
- Project Name: BloodBank
- Project Date: 10/12/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
-
 public class HomeView extends Fragment {
 
     private View view;
@@ -62,6 +54,7 @@ public class HomeView extends Fragment {
         recentPosts.setLayoutManager(new LinearLayoutManager(getContext()));
 
         donor_ref = FirebaseDatabase.getInstance().getReference();
+        //lưu trữ các bài đăng
         postLists = new ArrayList<>();
 
         pd = new ProgressDialog(getActivity());
@@ -72,7 +65,9 @@ public class HomeView extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         getActivity().setTitle("Blood Point");
 
+        //Đối tượng BloodRequestAdapter quản lý và hiển thị danh sách các bài đăng.
         restAdapter = new BloodRequestAdapter(postLists);
+        //hiển thị các bài đăng mới nhất
         RecyclerView.LayoutManager pmLayout = new LinearLayoutManager(getContext());
         recentPosts.setLayoutManager(pmLayout);
         recentPosts.setItemAnimator(new DefaultItemAnimator());
@@ -83,6 +78,7 @@ public class HomeView extends Fragment {
         return view;
 
     }
+    //truy vấn và tải dữ liệu bài đăng từ Firebase Realtime Database
     private void AddPosts()
     {
         Query allposts = donor_ref.child("posts");
@@ -96,6 +92,7 @@ public class HomeView extends Fragment {
                     for (DataSnapshot singlepost : dataSnapshot.getChildren()) {
                         CustomUserData customUserData = singlepost.getValue(CustomUserData.class);
                         postLists.add(customUserData);
+                        //sau khi dữ liệu được update thì cập nhật lại giao diện
                         restAdapter.notifyDataSetChanged();
                     }
                     pd.dismiss();

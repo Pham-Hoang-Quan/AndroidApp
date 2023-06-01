@@ -54,14 +54,21 @@ public class AchievmentsView extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //khởi tạo giao diện Fragment từ layout user_achievment_fragment.xml.
+        //inflater chuyển đổi xml thành view trong java
         view = inflater.inflate(R.layout.user_achievment_fragment, container, false);
 
         pd = new ProgressDialog(getActivity());
         pd.setMessage("Loading...");
         pd.setCancelable(true);
         pd.setCanceledOnTouchOutside(false);
+
         bloodgroup = getResources().getStringArray(R.array.Blood_Group);
         divisionlist = getResources().getStringArray(R.array.division_list);
+
+        //lastDonate, totalDonate, donateInfo là các View để hiển thị thông tin
+        // về lần hiến máu cuối cùng,
+        // tổng số lần hiến máu và thông tin về việc hiến máu
         lastDonate = view.findViewById(R.id.setLastDonate);
         totalDonate = view.findViewById(R.id.settotalDonate);
         donateInfo = view.findViewById(R.id.donateInfo);
@@ -74,6 +81,7 @@ public class AchievmentsView extends Fragment {
         db_ref = FirebaseDatabase.getInstance().getReference("donors");
         user_ref = FirebaseDatabase.getInstance().getReference("users");
 
+        //truy vấn tới Firebase Realtime để lấy dữ liệu về ng dùng hiện tại
         Query userQ = user_ref.child(mAuth.getCurrentUser().getUid());
 
         try {

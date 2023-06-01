@@ -36,6 +36,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+
 public class NearByHospitalActivity extends Fragment implements
         OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
@@ -81,7 +82,18 @@ public class NearByHospitalActivity extends Fragment implements
         {
             Toast.makeText(getActivity(), "Không xác định được vị trí của bạn", Toast.LENGTH_LONG).show();
         }
+ public void ShowHospitals(double latitude, double longitude)
+    {
+        mMap.clear();
+        Object dataTransfer[] = new Object[2];
+        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();xx
+        String url = getUrl(latitude, longitude, "hospital");
+        dataTransfer[0] = mMap;
+        dataTransfer[1] = url;
 
+        getNearbyPlacesData.execute(dataTransfer);
+        Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
+    }
     }
 
     //kiem tra da cap quyen truy cap chưa, cho phep roi moi hien ban do ra
@@ -221,7 +233,7 @@ public class NearByHospitalActivity extends Fragment implements
         }
     }
 
-    //dua vao google places api lay danh sach benh vien gan day
+
     public void ShowHospitals(double latitude, double longitude)
     {
         mMap.clear();

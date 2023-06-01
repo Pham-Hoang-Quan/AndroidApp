@@ -30,12 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-/***
- Project Name: BloodBank
- Project Date: 10/12/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
 
 public class AchievmentsView extends Fragment {
 
@@ -76,7 +70,7 @@ public class AchievmentsView extends Fragment {
         mAuth  = FirebaseAuth.getInstance();
         lastDate = "";
 
-
+        //lấy dữ liệu từ firebase
         db_ref = FirebaseDatabase.getInstance().getReference("donors");
         user_ref = FirebaseDatabase.getInstance().getReference("users");
 
@@ -88,9 +82,10 @@ public class AchievmentsView extends Fragment {
 
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
+                    //Kiểm tra xem dữ liệu có tồn tại hay không
                     if(dataSnapshot.exists())
                     {
+                        //Nếu dữ liệu tồn tại, lấy thông tin từ db và hiển thị lên giao diện
                         final UserData userData = dataSnapshot.getValue(UserData.class);
                         final int getdiv = userData.getDivision();
                         final int getbg = userData.getBloodGroup();
@@ -157,9 +152,11 @@ public class AchievmentsView extends Fragment {
 
                                         try
                                         {
+                                            //Tính toán số lần hiến máu nếu đã đủ 120 ngày thì hiển thị thông báo
+                                            //nếu ch đủ 120 ngaỳ thì hiển thị số ngày còn lại và ẩn TextView đi
                                             if(totday>120)
                                             {
-                                                donateInfo.setText("Have you donated today?");
+                                                donateInfo.setText("Bạn đã hiến máu hôm nay?");
                                                 nextDonate.setVisibility(View.GONE);
                                                 yesno.setVisibility(View.VISIBLE);
 
@@ -185,10 +182,10 @@ public class AchievmentsView extends Fragment {
                                             }
                                             else
                                             {
-                                                donateInfo.setText("Next donation available in:");
+                                                donateInfo.setText("Đóng góp tiếp theo có sẵn trong:");
                                                 yesno.setVisibility(View.GONE);
                                                 nextDonate.setVisibility(View.VISIBLE);
-                                                nextDonate.setText((120-totday)+" days");
+                                                nextDonate.setText((120-totday)+" ngày");
                                             }
                                         } catch (Exception e)
                                         {
@@ -206,7 +203,7 @@ public class AchievmentsView extends Fragment {
                                     linearLayout.setVisibility(View.GONE);
                                     TextView tv  = view.findViewById(R.id.ShowInof);
                                     tv.setVisibility(View.VISIBLE);
-                                    Toast.makeText(getActivity(), "Update your profile to be a donor first.", Toast.LENGTH_LONG)
+                                    Toast.makeText(getActivity(), "Cập nhật hồ sơ của bạn để trở thành nhà tài trợ.", Toast.LENGTH_LONG)
                                             .show();
                                 }
                                 pd.dismiss();
@@ -222,7 +219,7 @@ public class AchievmentsView extends Fragment {
                     }
                     else
                     {
-                        Toast.makeText(getActivity(), "You are not a user."+divisionlist[0]+" "+bloodgroup[0], Toast.LENGTH_LONG)
+                        Toast.makeText(getActivity(), "Bạn không phải người dùng."+divisionlist[0]+" "+bloodgroup[0], Toast.LENGTH_LONG)
                                 .show();
                     }
 

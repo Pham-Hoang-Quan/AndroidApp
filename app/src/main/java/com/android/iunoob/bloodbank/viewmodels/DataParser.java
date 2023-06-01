@@ -10,14 +10,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/***
- Project Name: BloodBank
- Project Date: 10/22/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
-
-
 public class DataParser {
 
     private HashMap<String, String> getPlace(JSONObject googlePlaceJson)

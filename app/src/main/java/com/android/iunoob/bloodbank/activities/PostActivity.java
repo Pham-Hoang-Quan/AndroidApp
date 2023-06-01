@@ -139,7 +139,7 @@ public class PostActivity extends AppCompatActivity {
                                     db_ref.child(uid).child("BloodGroup").setValue(spinner1.getSelectedItem().toString());
                                     db_ref.child(uid).child("Time").setValue(Time);
                                     db_ref.child(uid).child("Date").setValue(Date);
-                                    Toast.makeText(PostActivity.this, "Yêu cầu hiến máu của bạn đã được đăng",
+                                    Toast.makeText(PostActivity.this, "Yêu cầu cần của bạn đã được đăng",
                                             Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(PostActivity.this, Dashboard.class));
 

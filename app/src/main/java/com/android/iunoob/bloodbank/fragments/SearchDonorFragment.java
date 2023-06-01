@@ -109,7 +109,7 @@ public class SearchDonorFragment extends Fragment {
                        else
                        {
 
-                           Toast.makeText(getActivity(), "Database is empty now!",
+                           Toast.makeText(getActivity(), "Không có dữ liệu!",
                                    Toast.LENGTH_LONG).show();
 
                        }

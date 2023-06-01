@@ -26,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         //được gọi khi hoạt động Login được tạo, thiết lập sự kiện lấy
         //thông tin người dùng hiện tại
         super.onCreate(savedInstanceState);
@@ -58,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
         //khởi tạo các biến và liên kết thành phần giao diện
         inputemail = findViewById(R.id.input_username);
         inputpassword = findViewById(R.id.input_password);
-
         signin = findViewById(R.id.button_login);
         signup = findViewById(R.id.button_register);
         resetpass = findViewById(R.id.button_forgot_password);
@@ -75,11 +73,12 @@ public class LoginActivity extends AppCompatActivity {
                     //kiểm tra độ dài của email và mật khẩu sau đó thực hiện đăng nhập
                     if(password.length()>0 && email.length()>0) {
                         pd.show();
-                        //phương thức của FirebaseAuth
+                        //phương thức của FirebaseAuth để kiểm tra thông tin đăng nhập
                         mAuth.signInWithEmailAndPassword(email, password)
                                 .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
+                                        //Nếu thông tin đăng nhập không chính xác sẽ hiển thị thông báo
                                         if (!task.isSuccessful()) {
                                             Toast.makeText(getApplicationContext(),
                                                     "Quá trình xác thực thất bại",

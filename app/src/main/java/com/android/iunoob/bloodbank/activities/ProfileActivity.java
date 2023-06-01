@@ -215,7 +215,7 @@ public class ProfileActivity extends AppCompatActivity {
                                                     if(isDonor.isChecked())
                                                     {
                                                         donor_ref.child(div).child(blood).child(id).child("UID").setValue(id).toString();
-                                                        donor_ref.child(div).child(blood).child(id).child("LastDonate").setValue("Don't donate yet!");
+                                                        donor_ref.child(div).child(blood).child(id).child("LastDonate").setValue("Bạn chưa hiến máu!");
                                                         donor_ref.child(div).child(blood).child(id).child("TotalDonate").setValue(0);
                                                         donor_ref.child(div).child(blood).child(id).child("Name").setValue(Name);
                                                         donor_ref.child(div).child(blood).child(id).child("Contact").setValue(Contact);
@@ -251,7 +251,7 @@ public class ProfileActivity extends AppCompatActivity {
                             if(isDonor.isChecked())
                             {
                                 donor_ref.child(div).child(blood).child(id).child("UID").setValue(id).toString();
-                                donor_ref.child(div).child(blood).child(id).child("LastDonate").setValue("Don't donate yet!");
+                                donor_ref.child(div).child(blood).child(id).child("LastDonate").setValue("Bạn chưa hiến máu!");
                                 donor_ref.child(div).child(blood).child(id).child("TotalDonate").setValue(0);
                                 donor_ref.child(div).child(blood).child(id).child("Name").setValue(Name);
                                 donor_ref.child(div).child(blood).child(id).child("Contact").setValue(Contact);

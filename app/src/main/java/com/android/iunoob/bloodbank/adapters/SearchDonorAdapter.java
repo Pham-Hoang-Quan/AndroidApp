@@ -62,8 +62,8 @@ public class SearchDonorAdapter extends RecyclerView.Adapter<SearchDonorAdapter.
         }
         DonorData donorData = postLists.get(i);
         postHolder.Name.setText("Tên: "+donorData.getName());
-        postHolder.contact.setText(donorData.getContact());
-        postHolder.Address.setText("Địa hỉ: "+donorData.getAddress());
+        postHolder.contact.setText("Liên hệ: "+ donorData.getContact());
+        postHolder.Address.setText("Địa chỉ: "+donorData.getAddress());
         postHolder.totaldonate.setText("Tổng lần hiến máu: "+donorData.getTotalDonate()+" lần");
         postHolder.posted.setText("Lần hiến cuối cùng: "+donorData.getLastDonate());
 

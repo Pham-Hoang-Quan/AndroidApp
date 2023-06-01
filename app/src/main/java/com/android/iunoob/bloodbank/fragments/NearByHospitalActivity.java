@@ -36,14 +36,6 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-
-/***
- Project Name: BloodBank
- Project Date: 10/22/18
- Created by: imshakil
- Email: mhshakil_ice_iu@yahoo.com
- ***/
-
 public class NearByHospitalActivity extends Fragment implements
         OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
@@ -64,11 +56,12 @@ public class NearByHospitalActivity extends Fragment implements
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.near_by_hospitals, container, false);
-        getActivity().setTitle("Nearest hospitals");
+        getActivity().setTitle("Bệnh viện gần nhất");
 
         return view;
     }
 
+    //ghi de sau khi giao dien duoc tao
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -78,18 +71,20 @@ public class NearByHospitalActivity extends Fragment implements
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
-
+        // lay ban do
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.gMap);
         if (mapFragment != null) {
+            //lay thong tin ban do bat dong bo
             mapFragment.getMapAsync(this);
         }
         else
         {
-            Toast.makeText(getActivity(), "MapFragment is null, why?", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Không xác định được vị trí của bạn", Toast.LENGTH_LONG).show();
         }
 
     }
 
+    //kiem tra da cap quyen truy cap chưa, cho phep roi moi hien ban do ra
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
@@ -103,7 +98,7 @@ public class NearByHospitalActivity extends Fragment implements
                         mMap.setTrafficEnabled(true);
                     }
                 } else {
-                    Toast.makeText(getActivity(), "Permission Denied", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Từ chối truy cập", Toast.LENGTH_LONG).show();
                 }
         }
     }
@@ -113,8 +108,9 @@ public class NearByHospitalActivity extends Fragment implements
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
-
+//kiem tra du lieu da duoc cho phep truy cap chua
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            // cac tuy chon tren ban do cua nguoi dung duoc nhap
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
             mMap.setTrafficEnabled(true);
@@ -123,12 +119,14 @@ public class NearByHospitalActivity extends Fragment implements
 
     }
 
+
     protected synchronized void buildGoogleApiClient() {
         client = new GoogleApiClient.Builder(getActivity().getApplicationContext()).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(LocationServices.API).build();
         client.connect();
 
     }
 
+    //thực hiện kiểm tra và hiện vị trí của người dùng
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         locationRequest = new LocationRequest();
@@ -145,9 +143,10 @@ public class NearByHospitalActivity extends Fragment implements
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 &&  ActivityCompat.checkSelfPermission(getActivity(),
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(getActivity(), "You need to enable permissions to display location !", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Cho phép thiết bị truy cập vị trí của bạn", Toast.LENGTH_SHORT).show();
         }
 
+        //lay vi tri gan nhat tot nhat cua thiet bi
         fusedLocationProviderClient.getLastLocation().addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
             @Override
             public void onSuccess(Location location) {
@@ -157,6 +156,7 @@ public class NearByHospitalActivity extends Fragment implements
 
     }
 
+    //lấy url http đến google api để hien thi cac vi tri gan do duoc chi dinh
     private String getUrl(double latitude, double longitude, String nearbyPlace) {
 
         StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
@@ -171,6 +171,7 @@ public class NearByHospitalActivity extends Fragment implements
         return googlePlaceUrl.toString();
     }
 
+    //kiem tra nguoi dung da cho phep truy cap vi tri hay chua
     public boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
@@ -202,7 +203,7 @@ public class NearByHospitalActivity extends Fragment implements
         LatLng latLng = new LatLng(location.getLatitude() , location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
-        markerOptions.title("Current Location");
+        markerOptions.title("Vị trí hiện tại");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
         currentLocationmMarker = mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
@@ -220,16 +221,17 @@ public class NearByHospitalActivity extends Fragment implements
         }
     }
 
-   public void ShowHospitals(double latitude, double longitude)
-   {
-       mMap.clear();
-       Object dataTransfer[] = new Object[2];
-       GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
-       String url = getUrl(latitude, longitude, "hospital");
-       dataTransfer[0] = mMap;
-       dataTransfer[1] = url;
+    //dua vao google places api lay danh sach benh vien gan day
+    public void ShowHospitals(double latitude, double longitude)
+    {
+        mMap.clear();
+        Object dataTransfer[] = new Object[2];
+        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();xx
+        String url = getUrl(latitude, longitude, "hospital");
+        dataTransfer[0] = mMap;
+        dataTransfer[1] = url;
 
-       getNearbyPlacesData.execute(dataTransfer);
-       Toast.makeText(getContext(), "Showing Nearby Hospitals", Toast.LENGTH_SHORT).show();
-   }
+        getNearbyPlacesData.execute(dataTransfer);
+        Toast.makeText(getContext(), "Danh sách các bệnh viện gần đây", Toast.LENGTH_SHORT).show();
+    }
 }
